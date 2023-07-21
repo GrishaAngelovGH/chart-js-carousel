@@ -1,10 +1,10 @@
 import Chart from 'chart.js/auto'
 import createContext from './chart-context'
 
-const ctx = createContext('line-area-chart')
+const ctx = createContext('radar-area-chart')
 
 new Chart(ctx, {
-  type: 'line',
+  type: 'radar',
   data: {
     labels: ['Tokyo', 'Mumbai', 'Mexico City', 'Shanghai', 'Sao Paulo', 'New York'],
     datasets: [{
@@ -30,7 +30,7 @@ new Chart(ctx, {
     plugins: {
       title: {
         display: true,
-        text: 'Line Area Chart',
+        text: 'Radar Area Chart',
         font: {
           size: 40
         }
