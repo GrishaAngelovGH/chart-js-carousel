@@ -1,5 +1,7 @@
 import Chart from 'chart.js/auto'
 
+Chart.defaults.font.size = 20
+
 const createAreaChart = (title, type, ctx) => {
   return new Chart(ctx, {
     type: type,
