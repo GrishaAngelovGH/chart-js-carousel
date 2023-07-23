@@ -25,6 +25,11 @@ const createAreaChart = (title, type, ctx) => {
       }]
     },
     options: {
+      layout: {
+        padding: {
+          bottom: 25
+        }
+      },
       responsive: true, // Instruct chart js to respond nicely.
       maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height 
       plugins: {
