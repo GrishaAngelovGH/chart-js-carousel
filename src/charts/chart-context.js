@@ -4,10 +4,15 @@ const createContext = id => {
   const slideDiv = document.createElement('div')
   slideDiv.classList = 'swiper-slide'
 
+  const canvasDiv = document.createElement('div')
+  canvasDiv.style.width = '90%'
+  canvasDiv.style.height = '100%'
+
   const canvas = document.createElement('canvas')
   canvas.id = id
 
-  slideDiv.append(canvas)
+  canvasDiv.append(canvas)
+  slideDiv.append(canvasDiv)
   swiperDiv.append(slideDiv)
 
   return document.querySelector(`#${id}`).getContext('2d')
