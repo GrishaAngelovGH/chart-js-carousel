@@ -3,7 +3,9 @@ import Chart from 'chart.js/auto'
 Chart.defaults.font.size = 20
 
 const createAreaChart = (title, type, ctx) => {
-  return new Chart(ctx, {
+  const actions = []
+
+  const chart = new Chart(ctx, {
     type: type,
     data: {
       labels: ['Tokyo', 'Mumbai', 'Mexico City', 'Shanghai', 'Sao Paulo', 'New York'],
@@ -43,6 +45,17 @@ const createAreaChart = (title, type, ctx) => {
       }
     }
   })
+
+  actions.forEach((a, i) => {
+    const button = document.createElement('button')
+    button.id = 'button' + i
+    button.innerText = a.name
+    button.onclick = () => a.handler(chart)
+    const buttonsDivId = `#buttons-${title.toLowerCase().split(' ').join('-')}`
+    document.querySelector(buttonsDivId).appendChild(button)
+  })
+
+  return chart
 }
 
 export default createAreaChart
