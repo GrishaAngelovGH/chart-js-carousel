@@ -15,7 +15,7 @@ const createContext = id => {
   slideDiv.append(canvasDiv)
   swiperDiv.append(slideDiv)
 
-  return document.querySelector(`#${id}`).getContext('2d')
+  return canvas.getContext('2d')
 }
 
 export default createContext
