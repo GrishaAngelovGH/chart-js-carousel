@@ -3,6 +3,8 @@ import Chart from 'chart.js/auto'
 Chart.defaults.font.size = 20
 
 const createAreaChart = (title, type, ctx) => {
+  let smooth = false
+
   const actions = [
     {
       name: 'Clear Fill',
@@ -19,6 +21,14 @@ const createAreaChart = (title, type, ctx) => {
         chart.data.datasets.forEach(dataset => {
           dataset.fill = 'origin'
         })
+        chart.update()
+      }
+    },
+    {
+      name: 'Smooth',
+      handler(chart) {
+        smooth = !smooth
+        chart.options.elements.line.tension = smooth ? 0.4 : 0
         chart.update()
       }
     }
