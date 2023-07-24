@@ -12,6 +12,15 @@ const createAreaChart = (title, type, ctx) => {
         })
         chart.update()
       }
+    },
+    {
+      name: 'Fill',
+      handler: (chart) => {
+        chart.data.datasets.forEach(dataset => {
+          dataset.fill = 'origin'
+        })
+        chart.update()
+      }
     }
   ]
 
