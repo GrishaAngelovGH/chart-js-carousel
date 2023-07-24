@@ -3,7 +3,17 @@ import Chart from 'chart.js/auto'
 Chart.defaults.font.size = 20
 
 const createAreaChart = (title, type, ctx) => {
-  const actions = []
+  const actions = [
+    {
+      name: 'Clear Fill',
+      handler: (chart) => {
+        chart.data.datasets.forEach(dataset => {
+          dataset.fill = false
+        })
+        chart.update()
+      }
+    }
+  ]
 
   const chart = new Chart(ctx, {
     type: type,
