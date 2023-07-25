@@ -31,6 +31,14 @@ const createAreaChart = (title, type, ctx) => {
         chart.options.elements.line.tension = smooth ? 0.4 : 0
         chart.update()
       }
+    },
+    {
+      name: 'Animate',
+      handler(chart) {
+        chart.options.animations.tension.duration =
+          !chart.options.animations.tension.duration ? 3000 : 0
+        chart.update()
+      }
     }
   ]
 
@@ -59,6 +67,15 @@ const createAreaChart = (title, type, ctx) => {
       layout: {
         padding: {
           bottom: 25
+        }
+      },
+      animations: {
+        tension: {
+          duration: 0,
+          easing: 'easeInOutSine',
+          from: 1,
+          to: 0,
+          loop: true
         }
       },
       responsive: true, // Instruct chart js to respond nicely.
