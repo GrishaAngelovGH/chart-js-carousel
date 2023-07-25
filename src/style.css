@@ -14,7 +14,7 @@ body {
   height: 70%;
 }
 
-.swiper-wrapper > .swiper-slide {
+.swiper-wrapper>.swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,4 +34,26 @@ button {
 
 button:hover {
   background: #0039a6;
+}
+
+#buttons-line-area-chart, #buttons-radar-area-chart {
+  position: fixed;
+  top: 3%;
+  right: 8%;
+}
+
+@media screen and (max-width: 992px) {
+  .swiper-pagination {
+    display: none;
+  }
+
+  #buttons-line-area-chart, #buttons-radar-area-chart {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
 }

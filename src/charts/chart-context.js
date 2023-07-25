@@ -6,9 +6,6 @@ const createContext = id => {
 
   const buttonsDiv = document.createElement('div')
   buttonsDiv.id = `buttons-${id}`
-  buttonsDiv.style.position = 'fixed'
-  buttonsDiv.style.top = '15px'
-  buttonsDiv.style.right = '100px'
 
   const canvasDiv = document.createElement('div')
   canvasDiv.style.width = '90%'
