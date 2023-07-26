@@ -1,9 +1,9 @@
 import Chart from 'chart.js/auto'
-import createContext from './chart-context'
+import createContext from '../chart-context'
 
 Chart.defaults.font.size = 20
 
-const ctx = createContext('bar-chart')
+const ctx = createContext('vertical-bar-chart')
 
 new Chart(ctx, {
   type: 'bar',
@@ -44,7 +44,7 @@ new Chart(ctx, {
     plugins: {
       title: {
         display: true,
-        text: 'Bar Chart',
+        text: 'Vertical Bar Chart',
         font: {
           size: 40
         }

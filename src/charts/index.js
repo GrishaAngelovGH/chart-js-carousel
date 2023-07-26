@@ -1,3 +1,3 @@
 import './area-chart/line-area-chart'
 import './area-chart/radar-area-chart'
-import './bar-chart'
+import './bar-chart/vertical-bar-chart'
