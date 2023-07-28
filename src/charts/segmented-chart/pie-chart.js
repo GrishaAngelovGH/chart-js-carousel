@@ -3,4 +3,4 @@ import createSegmentedChart from './segmented-chart'
 
 const ctx = createContext('pie-chart')
 
-createSegmentedChart('Pie Chart', 'pie', ctx)
+createSegmentedChart('Pie Chart', 'pie', 0, ctx)
