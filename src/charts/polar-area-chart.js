@@ -5,7 +5,17 @@ Chart.defaults.font.size = 20
 
 const ctx = createContext('polar-area-chart')
 
-new Chart(ctx, {
+const actions = [
+  {
+    name: 'Change Arc',
+    handler: (chart) => {
+      chart.options.elements.arc.circular = !chart.options.elements.arc.circular
+      chart.update()
+    }
+  }
+]
+
+const chart = new Chart(ctx, {
   type: 'polarArea',
   data: {
     labels: [
@@ -40,4 +50,13 @@ new Chart(ctx, {
       }
     }
   }
+})
+
+actions.forEach((a, i) => {
+  const button = document.createElement('button')
+  button.id = 'button' + i
+  button.innerText = a.name
+  button.onclick = () => a.handler(chart)
+  const buttonsDivId = '#buttons-polar-area-chart'
+  document.querySelector(buttonsDivId).appendChild(button)
 })

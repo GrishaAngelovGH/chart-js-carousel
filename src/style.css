@@ -37,7 +37,9 @@ button:hover {
   background: #0039a6;
 }
 
-#buttons-line-area-chart, #buttons-radar-area-chart {
+#buttons-line-area-chart, 
+#buttons-radar-area-chart,
+#buttons-polar-area-chart {
   position: fixed;
   top: 3%;
   right: 8%;
