@@ -5,7 +5,17 @@ Chart.defaults.font.size = 20
 
 const ctx = createContext('radar-chart')
 
-new Chart(ctx, {
+const actions = [
+  {
+    name: 'Toggle angle lines',
+    handler: (chart) => {
+      chart.options.scales.r.angleLines.display = !chart.options.scales.r.angleLines.display
+      chart.update()
+    }
+  }
+]
+
+const chart = new Chart(ctx, {
   type: 'radar',
   data: {
     labels: [
@@ -52,4 +62,13 @@ new Chart(ctx, {
       }
     }
   }
+})
+
+actions.forEach((a, i) => {
+  const button = document.createElement('button')
+  button.id = 'button' + i
+  button.innerText = a.name
+  button.onclick = () => a.handler(chart)
+  const buttonsDivId = '#buttons-radar-chart'
+  document.querySelector(buttonsDivId).appendChild(button)
 })
