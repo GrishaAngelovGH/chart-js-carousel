@@ -7,6 +7,15 @@ const ctx = createContext('radar-chart')
 
 const actions = [
   {
+    name: 'Clear Fill',
+    handler: (chart) => {
+      chart.data.datasets.forEach(dataset => {
+        dataset.fill = false
+      })
+      chart.update()
+    }
+  },
+  {
     name: 'Toggle angle lines',
     handler: (chart) => {
       chart.options.scales.r.angleLines.display = !chart.options.scales.r.angleLines.display
