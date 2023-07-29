@@ -16,6 +16,15 @@ const actions = [
     }
   },
   {
+    name: 'Fill',
+    handler: (chart) => {
+      chart.data.datasets.forEach(dataset => {
+        dataset.fill = 'origin'
+      })
+      chart.update()
+    }
+  },
+  {
     name: 'Toggle angle lines',
     handler: (chart) => {
       chart.options.scales.r.angleLines.display = !chart.options.scales.r.angleLines.display
